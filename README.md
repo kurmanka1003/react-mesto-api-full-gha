@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.22.67
+IP-адрес 158.160.22.67;
 
 Frontend https://mestokurmanka.students.nomoreparties.sbs
 
