@@ -73,12 +73,12 @@ class Api {
   }
 }
 
-const api = new Api({
-  url: "http://api.mestokurmank.students.nomoreparties.sbs",
-  headers: {
+const api = new Api(
+  "http://api.mestokurmank.students.nomoreparties.sbs",
+  {
     authorization: "",
     "Content-Type": "application/json",
   }
-})
+);
 
 export default api;
