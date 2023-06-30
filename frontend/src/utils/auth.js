@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.mestokurmank.students.nomoreparties.sbs";
+export const BASE_URL = "https://api.mestokurmank.students.nomoreparties.sbs";
 //заменить своим адресом
 const getJson = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
