@@ -1,0 +1,13 @@
+.authorization__link {
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.authorization__link:hover {
+  opacity: 0.6;
+}

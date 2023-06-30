@@ -1,0 +1,11 @@
+.cards__element {
+  position: relative;
+  max-width: 282px;
+  min-height: 361px;
+  justify-self: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

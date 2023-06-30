@@ -1,0 +1,22 @@
+.popup__content {
+  box-sizing: border-box;
+  position: relative;
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 34px 36px 37px;
+}
+@media screen and (max-width: 780px) {
+  .popup__content {
+    padding: 25px 22px;
+    width: 282px;
+  }
+}
+
+.popup__zoom-container {
+  position: relative;
+  max-width: 75vw;
+  max-height: 75vh;
+}
