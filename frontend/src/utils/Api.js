@@ -1,14 +1,7 @@
 class Api {
-  constructor(baseUrl, token) {
+  constructor(baseUrl, headers) {
     this._baseUrl = baseUrl;
-    this._token = token;
-  }
-
-  _getHeaders() {
-    return {
-      authorization: this._token,
-      "content-type": "application/json",
-    };
+    this._headers = headers;
   }
 
   _getJson(res) {
@@ -20,20 +13,22 @@ class Api {
 
   getUserData() {
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._getHeaders(),
+      method: 'GET',
+      headers: this._headers
     }).then(this._getJson);
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-      headers: this._getHeaders(),
+      method: 'GET',
+      headers: this._headers
     }).then(this._getJson);
   }
 
   changeUserData(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -44,7 +39,7 @@ class Api {
   changeAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({
         avatar: data.avatar,
       }),
@@ -54,7 +49,7 @@ class Api {
   addCardtoServer(item) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this._getHeaders(),
+      eaders: this._headers,
       body: JSON.stringify(item),
     }).then(this._getJson);
   }
@@ -62,21 +57,28 @@ class Api {
   addLikeAndRemove(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
-      headers: this._getHeaders(),
+      headers: this._headers,
     }).then(this._getJson);
   }
 
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
-      headers: this._getHeaders(),
+      headers: this._headers,
     }).then(this._getJson);
+  }
+
+  setToken(token) {
+    this._headers.authorization = `Bearer ${token}`;
   }
 }
 
-const api = new Api(
-  "https://mesto.nomoreparties.co/v1/cohort-61",
-  "2e363b9c-286e-4357-a8e3-4c6ff58ded65"
-);
+const api = new Api({
+  url: "https://api.mikryukovka.nomoreparties.sbs",
+  headers: {
+    authorization: "",
+    "Content-Type": "application/json",
+  }
+})
 
 export default api;

@@ -1,5 +1,5 @@
 export const BASE_URL = "https://auth.nomoreparties.co";
-
+//заменить своим адресом
 const getJson = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 };
@@ -34,7 +34,7 @@ export function authorize(password, email) {
   })
     .then(getJson)
     .then((data) => {
-      localStorage.setItem("jwt", data.token);
+      localStorage.setItem("jwt", data.jwtToken);
       return data;
     });
 }

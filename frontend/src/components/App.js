@@ -25,7 +25,6 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [email, setEmail] = useState("");
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
@@ -41,7 +40,7 @@ function App() {
       Promise.all([api.getUserData(), api.getInitialCards()])
         .then(([user, cards]) => {
           setCurrentUser(user);
-          setCards(cards);
+          setCards(cards.reverse());
         })
         .catch((err) => console.log(err));
     }
@@ -55,9 +54,9 @@ function App() {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
       getContent(jwt)
-        .then((res) => {
+        .then(() => {
+          api.setToken(jwt);
           setLoggedIn(true);
-          setEmail(res.data.email);
           navigate("/", { replace: true });
         })
         .catch((err) => {
@@ -69,7 +68,6 @@ function App() {
   function signOut() {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
-    setEmail("");
     navigate("/sign-in", { replace: true });
   }
 
@@ -102,7 +100,7 @@ function App() {
         });
         console.log(err);
       });
-  };
+  }
 
   function handleLogin(evt) {
     evt.preventDefault();
@@ -111,7 +109,7 @@ function App() {
       .then((data) => {
         setFormValue({ email: "", password: "" });
         setLoggedIn(true);
-        setEmail(email);
+        api.setToken(data.jwtToken);
         navigate("/", { replace: true });
       })
       .catch((err) => {
@@ -122,7 +120,7 @@ function App() {
         });
         console.log(err);
       });
-  };
+  }
 
   function handleEditProfileClick() {
     setIsProfilePopupOpen(true);
@@ -205,7 +203,7 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
-          <Header email={email} onSignOut={signOut} />
+          <Header onSignOut={signOut} />
           <Routes>
             <Route
               path="/"
