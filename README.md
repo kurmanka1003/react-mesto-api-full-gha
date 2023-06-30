@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.22.67
 
-Frontend https://...
+Frontend https://mestokurmanka.students.nomoreparties.sbs
 
-Backend https://...
+Backend https://api.mestokurmank.students.nomoreparties.sbs
