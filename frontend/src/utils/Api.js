@@ -49,7 +49,7 @@ class Api {
   addCardtoServer(item) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      eaders: this._headers,
+      headers: this._headers,
       body: JSON.stringify(item),
     }).then(this._getJson);
   }
@@ -73,12 +73,12 @@ class Api {
   }
 }
 
-const api = new Api(
-  "https://api.mestokurmank.students.nomoreparties.sbs",
-  {
+const api = new Api({
+  url: "https://api.mestokurmank.students.nomoreparties.sbs",
+  headers: {
     authorization: "",
     "Content-Type": "application/json",
   }
-);
+})
 
 export default api;
