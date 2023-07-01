@@ -114,6 +114,7 @@ function App() {
         navigate("/", { replace: true });
       })
       .catch((err) => {
+        console.log(data);
         setIsOpenInfoTooltip(true);
         setIsRegister({
           status: false,
