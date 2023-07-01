@@ -109,7 +109,7 @@ function App() {
       .then((data) => {
         setFormValue({ email: "", password: "" });
         setLoggedIn(true);
-        api.setToken(data.jwtToken);
+        api.setToken(data);
         navigate("/", { replace: true });
       })
       .catch((err) => {
