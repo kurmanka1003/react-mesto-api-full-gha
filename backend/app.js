@@ -20,7 +20,7 @@ app.use(requestLogger);
 
 app.use(cors({
   origin: 'https://mestokurmanka.students.nomoreparties.sbs',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
