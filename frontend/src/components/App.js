@@ -109,6 +109,7 @@ function App() {
       .then((data) => {
         setFormValue({ email: "", password: "" });
         setLoggedIn(true);
+        console.log(data);
         api.setToken(data);
         navigate("/", { replace: true });
       })
