@@ -99,12 +99,7 @@ const login = (req, res, next) => {
           expiresIn: '7d',
         });
 
-        res.cookie('jwtToken', token, {
-          maxAge: 3600,
-          httpOnly: true,
-        });
-
-        return res.send({ jwtToken: token });
+        return res.send({ token });
       }
       throw new UnauthorizedError('Передан неверный e-mail или пароль');
     }))
