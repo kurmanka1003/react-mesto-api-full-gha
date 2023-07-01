@@ -110,11 +110,11 @@ function App() {
         setFormValue({ email: "", password: "" });
         setLoggedIn(true);
         console.log(data);
-        api.setToken(data);
+        console.log(data.jwtToken);
+        api.setToken(data.jwtToken);
         navigate("/", { replace: true });
       })
       .catch((err) => {
-        console.log(data);
         setIsOpenInfoTooltip(true);
         setIsRegister({
           status: false,
