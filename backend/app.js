@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const errors = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { corsOptions } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
@@ -17,7 +18,7 @@ const app = express();
 
 app.use(requestLogger);
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
