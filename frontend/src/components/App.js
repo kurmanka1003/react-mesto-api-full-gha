@@ -50,7 +50,7 @@ function App() {
     tokenCheck();
   }, []);
 
-  function tokenCheck() {
+  const tokenCheck = () => {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
       getContent(jwt)
@@ -63,7 +63,7 @@ function App() {
           console.log(err);
         });
     }
-  }
+  };
 
   function signOut() {
     localStorage.removeItem("jwt");
@@ -109,8 +109,6 @@ function App() {
       .then((data) => {
         setFormValue({ email: "", password: "" });
         setLoggedIn(true);
-        console.log(data);
-        console.log(data.jwtToken);
         api.setToken(data.jwtToken);
         navigate("/", { replace: true });
       })

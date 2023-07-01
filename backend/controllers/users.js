@@ -98,16 +98,18 @@ const login = (req, res, next) => {
         const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
           expiresIn: '7d',
         });
-
-        return res.send({ token });
+        res.cookie('jwtToken', token, {
+          maxAge: 3600,
+          httpOnly: true,
+        });
+        return res.send({ jwtToken: token });
       }
-      throw new UnauthorizedError('Передан неверный e-mail или пароль');
+      throw new UnauthorizedError('Переданы неверный email или пароль');
     }))
     .catch((err) => {
       if (err instanceof Error.DocumentNotFoundError) {
-        return next(new UnauthorizedError('Передан неверный e-mail или пароль'));
+        return next(new UnauthorizedError('Переданы неверный email или пароль'));
       }
-
       return next(err);
     });
 };
