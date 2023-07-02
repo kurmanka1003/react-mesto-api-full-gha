@@ -16,8 +16,7 @@
 10. dotenv.
 11. celebrate.
 12. jsonwebtoken.
-13. celebrate.
-14. mongoDB.
+13. mongoDB.
 
 ## Директории
 
