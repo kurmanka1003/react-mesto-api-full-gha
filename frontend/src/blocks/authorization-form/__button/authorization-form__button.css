@@ -19,7 +19,7 @@
   opacity: 0.85;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 414px) {
   .authorization-form__button {
     width: 90%;
     margin: 186px auto 15px;

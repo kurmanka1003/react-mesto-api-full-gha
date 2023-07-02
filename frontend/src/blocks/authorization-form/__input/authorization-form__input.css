@@ -14,7 +14,7 @@
   border-bottom: 2px solid #cccccc;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 414px) {
   .authorization-form__input {
     width: 90%;
     margin: 0 auto;
