@@ -3,10 +3,18 @@
   height: 33px;
 
 }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 890px) and (min-width: 500px) {
   .header__logo {
     padding-left: 27px;
     padding-bottom: 32px;
+    width: 104px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header__logo {
+    padding-left: 27px;
     width: 104px;
     height: 24px;
   }

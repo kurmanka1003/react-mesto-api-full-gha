@@ -11,3 +11,9 @@
 .header__link:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 390px) {
+  .header__link {
+    margin-right: 25px;
+  }
+}

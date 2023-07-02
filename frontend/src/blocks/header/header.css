@@ -8,8 +8,15 @@
   min-width: 320px;
   padding-bottom: 41px;
 }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 890px) and (min-width: 400px) {
   .header {
     margin-top: 28px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header {
+    margin-top: 40px;
+    padding-bottom: 40px;
   }
 }

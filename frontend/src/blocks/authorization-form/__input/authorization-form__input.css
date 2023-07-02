@@ -13,3 +13,22 @@
   outline: none;
   border-bottom: 2px solid #cccccc;
 }
+
+@media screen and (max-width: 390px) {
+  .authorization-form__input {
+    width: 90%;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    border: none;
+    background-color: black;
+    box-sizing: border-box;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    outline: none;
+    border-bottom: 2px solid #cccccc;
+  }
+}
