@@ -1,19 +1,23 @@
-# Проект Mesto фронтенд + бэкенд
+# Проект Mesto: backend
 
-Сервер для проекта Mesto.
+Бэкенд проекта Mesto создан в рамках обучения в [Яндекс.Практикум](https://praktikum.yandex.ru/) и посвящен созданию сервера. 
 
 ## Технологии
 
-1. Node.js.
-2. Express.
-3. Cookie-parser.
-4. Mongoose.
-5. Validator.
-6. Helmet.
-7. Bcrypt.
-8. Jsonwebtoken.
-9. Celebrate.
-10. MongoDB (с использованием MongoDB Compass).
+1. node.js.
+2. express.
+3. cookie-parser.
+4. mongoose.
+5. validator.
+6. helmet.
+7. bcrypt.
+8. winston.
+9. cors.
+10. dotenv.
+11. celebrate.
+12. jsonwebtoken.
+13. celebrate.
+14. mongoDB.
 
 ## Директории
 
