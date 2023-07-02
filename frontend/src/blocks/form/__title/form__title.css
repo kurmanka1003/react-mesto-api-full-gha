@@ -9,11 +9,17 @@
     margin: 0 0 24px 0;
   }
   
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) and (max-width: 500px) {
     .form__title {
       width: 238px;
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 45px;
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    .form__title {
+      margin-bottom: 10px;
     }
   }
