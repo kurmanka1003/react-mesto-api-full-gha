@@ -8,6 +8,8 @@
 
 Адрес репозитория: https://github.com/kurmanka1003/react-mesto-api-full-gha
 
+Ссылка на сайт: https://mestokurmanka.students.nomoreparties.sbs
+
 ## Ссылки на проект
 
 IP 158.160.22.67
